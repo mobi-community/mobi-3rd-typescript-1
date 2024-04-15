@@ -12,7 +12,8 @@
 
 ### 페어-편성
 ```
-Gang - Wendy - Brilly - Riel
+1페어 Gang - Wendy
+2페어 Brilly - Riel
 ```
 
 ### 과제
