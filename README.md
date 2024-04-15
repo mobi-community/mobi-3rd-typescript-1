@@ -12,11 +12,7 @@
 
 ### 페어-편성
 ```
-1조
-Jeff - Chan - Riel
-
-2조
-Gang - Wendy - Brilly
+Gang - Wendy - Brilly - Riel
 ```
 
 ### 과제
