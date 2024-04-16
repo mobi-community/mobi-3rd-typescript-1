@@ -21,7 +21,7 @@
 
 ```
 
-## 기본타입 (primitive type)
+## 주요 타입 및 관련 개념 정리
 [출처: Typescript 공식문서 > Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 ### number
