@@ -1,4 +1,5 @@
 # Typescript 란 무엇인가?
+_(*미리 작성 || **compile** 은 코드 해석 vs **run-time** 은 코드 실행)_
 
 ## Typescript 공식 문서
 
@@ -12,7 +13,6 @@
 
 > **③** Safety at Scale <br/>
 > - TypeScript는 JavaScript를 이해하며 추가 코드 없이도 훌륭한 도구를 제공하기 위해 타입 추론을 사용합니다.
-
 
 ## Javascript
  - Javascript 는 타입이 run-time 에 동적으로 설정되기 때문에, 개발자 편의에 따라 객체를 자유롭게 확장할 수 있으며 문법 구문이 쉽고 단순한 특징이 있다.
@@ -31,8 +31,6 @@
 <br/>
 
 ## 개념 정리
-
-_(*미리 작성: **compile** 은 코드 해석 vs **run-time** 은 코드 실행)_
 
 ### 정적 타입 언어 vs 동적 타입 언어
   - **정적 타입 언어**
