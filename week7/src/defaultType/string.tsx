@@ -4,8 +4,7 @@
  * 문자열은 "", '', ``을 사용하여 생성할 수 있다
  *
  */
-
-import styled from "styled-components";
+import { S } from "../styles/cssStyle";
 
 const String = () => {
     const name: string = "Jin sol"; // 문자열 리터럴을 사용
@@ -19,43 +18,18 @@ const String = () => {
     };
 
     return (
-        <Container>
-            <Box>
+        <S.Container>
+            <S.Box>
                 <h1>String Type</h1>
-                <Wrapper>
+                <p>{`const name: string = "Jin sol";`}</p>
+                <S.Wrapper>
                     <p>{name}</p>
                     <p>{greeting} </p>
                     <p>{ageStatement} </p>
                     <p>{address("진솔", "서울 금천구")}</p>
-                </Wrapper>
-            </Box>
-        </Container>
+                </S.Wrapper>
+            </S.Box>
+        </S.Container>
     );
 };
 export default String;
-
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const Box = styled.div`
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-`;
-
-const Wrapper = styled.div`
-    width: 400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    text-align: center;
-`;

@@ -5,7 +5,7 @@
  * `unknown`타입을 다른 타입에 할당하려면, 타입 검사를 통해 해당 타입이 맞는지 확인하거나 타입 단언을 사용해야한다
  */
 
-import styled from "styled-components";
+import { S } from "../styles/cssStyle";
 
 const Unknown = () => {
     const viewValue = (val: unknown) => {
@@ -19,42 +19,18 @@ const Unknown = () => {
     };
 
     return (
-        <Container>
-            <Box>
+        <S.Container>
+            <S.Box>
                 <h1>Unknown Type</h1>
-                <Wrapper>
+                <p>{`const viewValue = (val: unknown) => `}</p>
+                <p>{`{if (typeof val === "number") {return val + 1;}};`}</p>
+                <S.Wrapper>
                     <p>{viewValue(1)}</p>
                     <p>{viewValue("abc")}</p>
                     <p>{viewValue([1, 2, 3])}</p>
-                </Wrapper>
-            </Box>
-        </Container>
+                </S.Wrapper>
+            </S.Box>
+        </S.Container>
     );
 };
 export default Unknown;
-
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const Box = styled.div`
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-`;
-
-const Wrapper = styled.div`
-    width: 400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    text-align: center;
-`;

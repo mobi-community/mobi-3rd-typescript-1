@@ -6,6 +6,7 @@
  */
 
 import styled from "styled-components";
+import { S } from "../styles/cssStyle";
 
 const Array = () => {
     // 숫자 배열
@@ -33,10 +34,12 @@ const Array = () => {
     ];
 
     return (
-        <Container>
-            <Box>
+        <S.Container>
+            <S.Box>
                 <h1>Array Type</h1>
-                <Wrapper>
+                <P>{`const numbers: number[] = [1, 2, 3, 4, 5];`}</P>
+                <P>{`const numbersGeneric: Array<number> = [1, 2, 3, 4, 5];`}</P>
+                <S.Wrapper>
                     <p>{numbers}</p>
                     <p>{numbersGeneric}</p>
                     <p>{strArr}</p>
@@ -53,9 +56,9 @@ const Array = () => {
                             <p>{data.age}</p>
                         </>
                     ))}
-                </Wrapper>
-            </Box>
-        </Container>
+                </S.Wrapper>
+            </S.Box>
+        </S.Container>
     );
 };
 export default Array;
@@ -83,5 +86,9 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+    text-align: center;
+`;
+
+const P = styled.p`
     text-align: center;
 `;

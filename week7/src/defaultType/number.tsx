@@ -8,7 +8,7 @@
  * `number`타입 사용 시, 숫자 값이 아닌 다른 값이 할당되려고 하면 컴파일 에러를 발생시킨다.
  */
 
-import styled from "styled-components";
+import { S } from "../styles/cssStyle";
 
 const NumberPage = () => {
     const age: number = 30; // 정수
@@ -26,10 +26,13 @@ const NumberPage = () => {
     };
 
     return (
-        <Container>
-            <Box>
+        <S.Container>
+            <S.Box>
                 <h1>Number Type</h1>
-                <Wrapper>
+                <p>{`const calAver = (num: number[]) => {
+        return num.reduce((acc, cur) => acc + cur / num.length, 0);
+    };`}</p>
+                <S.Wrapper>
                     <p>정수 : {age}</p>
                     <p>부동소수점 : {price} </p>
                     <p>16진수 : {hexValue} </p>
@@ -37,35 +40,9 @@ const NumberPage = () => {
                     <p>8진수 : {octalValue}</p>
                     <p>두 수의 합 : {addNumber(10, 10)}</p>
                     <p>평균 값 : {calAver([10, 20, 30, 40, 50])}</p>
-                </Wrapper>
-            </Box>
-        </Container>
+                </S.Wrapper>
+            </S.Box>
+        </S.Container>
     );
 };
 export default NumberPage;
-
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const Box = styled.div`
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-`;
-
-const Wrapper = styled.div`
-    width: 400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    text-align: center;
-`;

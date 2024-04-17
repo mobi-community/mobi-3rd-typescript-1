@@ -5,6 +5,7 @@
  */
 
 import styled from "styled-components";
+import { S } from "../styles/cssStyle";
 
 interface User {
     name: string;
@@ -37,45 +38,20 @@ const Object = () => {
     const mergedUser = mergeUsers(user1, user2);
 
     return (
-        <Container>
-            <Box>
+        <S.Container>
+            <S.Box>
                 <h1>object Type</h1>
-                <Wrapper>
+                <p>{` const user1: User = {name: "jin",age: 900,};`}</p>
+                <S.Wrapper>
                     <p>name : {getName(user1)}</p>
                     <p>name : {getName(user2)}</p>
                     <p>Updated Age: {updateUser.age}</p>
                     <p>
                         Merge User : {mergedUser.name}, Age: {mergedUser.age}
                     </p>
-                </Wrapper>
-            </Box>
-        </Container>
+                </S.Wrapper>
+            </S.Box>
+        </S.Container>
     );
 };
 export default Object;
-
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const Box = styled.div`
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-`;
-
-const Wrapper = styled.div`
-    width: 400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    text-align: center;
-`;
