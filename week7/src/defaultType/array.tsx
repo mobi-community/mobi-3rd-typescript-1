@@ -63,32 +63,6 @@ const Array = () => {
 };
 export default Array;
 
-const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`;
-
-const Box = styled.div`
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-`;
-
-const Wrapper = styled.div`
-    width: 400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    text-align: center;
-`;
-
 const P = styled.p`
     text-align: center;
 `;

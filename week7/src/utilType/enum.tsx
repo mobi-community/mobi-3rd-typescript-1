@@ -40,6 +40,10 @@ const Enum = () => {
                     숫자형 열거형: 값을 지정하지 않으면 기본적으로 0부터
                     시작하는 숫자가 할당된다.
                     <p>{`enum Direction {Up,Down,Left,Right,}`}</p>
+                    <p>
+                        Direction[1] 숫자형 열거형에서만 사용가능 :
+                        {Direction[1]}
+                    </p>
                 </p>
                 <p>
                     문자형 열거형: 직접 할당 가능, 각 값은 그 문자열로 초기화 됨
@@ -49,13 +53,11 @@ const Enum = () => {
                     이종 열거형: 숫자와 문자열 혼합하여 열거형 정의 가능.
                     <span>가능한 일관된 타입을 사용하는 것이 좋음</span>
                     <p>{`enum BooleanEnum {No = 0,Yes = "YES",}`}</p>
+                    <p>{BooleanEnum.No}</p>
+                    <p>{BooleanEnum.Yes}</p>
                 </p>
                 <S.Wrapper>
                     <p>{respond("UP", Direction.Up)}</p>
-                    <p>
-                        Direction[1] - 숫자형 열거형에서만 사용가능 :
-                        {Direction[1]}
-                    </p>
                 </S.Wrapper>
             </S.Box>
         </S.Container>

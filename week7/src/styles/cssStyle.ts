@@ -14,8 +14,6 @@ const Box = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     padding: 0 10px;
 `;
 
@@ -25,10 +23,33 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+`;
+
+const Text = styled.div`
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    background-color: #eee;
+    border-radius: 8px;
+    padding-top: 4px;
+`;
+
+const Pre = styled.pre`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 `;
 
 export const S = {
     Container,
     Box,
     Wrapper,
+    Text,
+    Pre,
 };

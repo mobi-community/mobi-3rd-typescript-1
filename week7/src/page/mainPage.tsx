@@ -7,6 +7,10 @@ interface OpenStates {
     [ket: number]: boolean;
 }
 
+interface VisibilityProps {
+    isVisible: boolean;
+}
+
 const MainPage = () => {
     const [isOpen, setIsOpen] = useState<OpenStates>({});
 
@@ -22,27 +26,35 @@ const MainPage = () => {
             <h1>타입스크립트의 기본 타입</h1>
             <Box>
                 {Definition.map((item) => (
-                    <Wrapper>
-                        <h1>{item.title}</h1>
-                        <p>{item.content}</p>
-                        <button onClick={() => toggleItem(item.id)}>
-                            {isOpen[item.id] ? "숨기기" : "열기"}
-                        </button>
-                        {isOpen[item.id] && <div>{item.component}</div>}
-                    </Wrapper>
+                    <>
+                        <div style={{ height: "10px" }}></div>
+                        <Wrapper key={item.id}>
+                            <Title onClick={() => toggleItem(item.id)}>
+                                {item.title}
+                            </Title>
+                            <Content isVisible={isOpen[item.id]}>
+                                {isOpen[item.id] && <div>{item.content}</div>}
+                                {isOpen[item.id] && <div>{item.component}</div>}
+                            </Content>
+                        </Wrapper>
+                    </>
                 ))}
             </Box>
             <h1>타입스크립트의 유틸리티 타입</h1>
             <Box>
                 {UtilDefinition.map((item) => (
-                    <Wrapper>
-                        <h1>{item.title}</h1>
-                        <p>{item.content}</p>
-                        <button onClick={() => toggleItem(item.id)}>
-                            {isOpen[item.id] ? "숨기기" : "열기"}
-                        </button>
-                        {isOpen[item.id] && <div>{item.component}</div>}
-                    </Wrapper>
+                    <>
+                        <div style={{ height: "10px" }}></div>
+                        <Wrapper key={item.id}>
+                            <Title onClick={() => toggleItem(item.id)}>
+                                {item.title}
+                            </Title>
+                            <Content isVisible={isOpen[item.id]}>
+                                {isOpen[item.id] && <div>{item.content}</div>}
+                                {isOpen[item.id] && <div>{item.component}</div>}
+                            </Content>
+                        </Wrapper>
+                    </>
                 ))}
             </Box>
         </Container>
@@ -58,15 +70,27 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
+const Title = styled.div`
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+`;
+
 const Box = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 `;
 
 const Wrapper = styled.div`
-    width: 400px;
+    width: 600px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    border-radius: 8px;
+    padding: 10px;
+`;
+
+const Content = styled.div<VisibilityProps>`
+    display: ${(props) => (props.isVisible ? "block" : "none")};
 `;
