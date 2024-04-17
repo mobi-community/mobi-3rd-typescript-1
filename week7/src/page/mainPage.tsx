@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { Definition } from "../data/definition";
+import { Definition } from "../data/defaultDefinition";
 import { useState } from "react";
+import { UtilDefinition } from "../data/utilDefinition";
 
 interface OpenStates {
     [ket: number]: boolean;
@@ -18,8 +19,22 @@ const MainPage = () => {
 
     return (
         <Container>
+            <h1>타입스크립트의 기본 타입</h1>
             <Box>
                 {Definition.map((item) => (
+                    <Wrapper>
+                        <h1>{item.title}</h1>
+                        <p>{item.content}</p>
+                        <button onClick={() => toggleItem(item.id)}>
+                            {isOpen[item.id] ? "숨기기" : "열기"}
+                        </button>
+                        {isOpen[item.id] && <div>{item.component}</div>}
+                    </Wrapper>
+                ))}
+            </Box>
+            <h1>타입스크립트의 유틸리티 타입</h1>
+            <Box>
+                {UtilDefinition.map((item) => (
                     <Wrapper>
                         <h1>{item.title}</h1>
                         <p>{item.content}</p>
@@ -40,6 +55,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 `;
 
 const Box = styled.div`
