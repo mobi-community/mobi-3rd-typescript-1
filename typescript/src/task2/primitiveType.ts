@@ -21,7 +21,7 @@ bool = false
 
 console.log(bool)
 
-//! Array Type :number[] 구문 & string[] 사용가능 
+//! Object Type :number[] 구문 & string[] 사용가능 
 //이렇게 쓰는게 맞는지 잘 모르겠음...
 const Array1 : number[] = [1,2,3]
 const Array2: Array<number> = [1,2,3,]
@@ -79,45 +79,101 @@ console.log(uni3)
 // type TypeConditional<T> = T extends number ? string :
 //  T extends number ? "number";
 
-// !제네릭 (먼저 공부..)
-function getText<T>(text: T): T {
-    return text;
-  }
-getText<string>('hi');
-getText<number>(10);
-getText<boolean>(true);
 
-// function logText<T>(text: T): T {
-//     return text;
-//   }
+// ! type alias : 특정 타입에 대해 새로운 이름 지정하는 기능
+// 기본 타입
+type Age = number;
+type Name = string;
 
-// // #1 사용
-// const text1 = logText<string>("Hello Generic");
-// // #2 사용
-// const text = logText("Hello Generic");
+const age: Age = 30;
+const name: Name = "wendy";
 
+// 객체 타입
+type Point = {
+  x: number;
+  y: number;
+};
+const point: Point = { x: 10, y: 20 };
 
-// !제너릭 인터페이스
-// * enum 과 namespace는 제너릭으로 생성 불가
-// function loggText<T>(text: T): T {
-//     return text;
-//   }
-//   // #1
-//   let str: <T>(text: T) => T = logText;
-//   // #2
-//   let str: {<T>(text: T): T} = logText;
+// 함수 타입
+type Greeting = (name: string) => string;
+const greet: Greeting = (name) => `Hello, ${name}!`;
+
   
-//
-interface LengthWise {
-    length: number;
-  }
-  
-  function logText<T extends LengthWise>(text: T): T {
-    console.log(text.length);
-    return text;
-  }
-  logText(10); // Error, 숫자 타입에는 `length`가 존재하지 않으므로 오류 발생
-  logText({ length: 0, value: 'hi' }); // `text.length` 코드는 객체의 속성 접근과 같이 동작하므로 오류 없음
+// !interface :  상호간에 정의한 약속 혹은 규칙 
+// * 객체의 스펙(속성과 속성의 타입)
+// * 함수의 파라미터 및 스펙 (반환타입 등)
+// * 배열과 객체를 접근하는 방식
+// * 클래스
 
-  // ! type alias
-  
+const person = { name: 'wendy', age: 26}
+function logAge (obj : {age:number}){
+    console.log(obj.age)
+}
+logAge(person)
+
+// 위 예제에 인터페이스 적용
+// 알수있는점: 인터페이스를 인자로 받아 사용시 
+// 인터페이스의 속성 갯수와 인자로 받는객체 속성 갯수는 일치하지 않아도 됨
+interface personAge {
+    age: number
+}
+
+function logAge1 (obj : personAge) {
+    console.log(obj.age)
+}
+const person1 = {name: 'wendy', age:26}
+logAge1(person1) 
+
+// 인터페이스의 옵션 속성 
+// 인터페이스에 정의되어있는 속성을 모두 사용할 필요 없음
+interface mobyy {
+    name: string;
+    age?: number; //인터페이스의 옵션속성
+}
+const mobiPerson = {
+    name: 'wendy'
+}
+function mobiTeam (team : mobyy) {
+    console.log(team.name)
+}
+mobiTeam(mobiPerson)
+
+// 인터페이스의 함수타입 정의
+interface login {
+    (username: string, password:string): boolean
+}
+let loginUser: login;
+loginUser = function(id:string, pw:string) {
+    console.log("로그인 완료")
+    return true
+}
+
+// 인터페이스의 확장
+// ? 인터페이스는 인터페이스간 확장이 가능한데 , 굳이 이렇게까지 하는이유가 있나?
+// ? 단순히 재사용성이 용이하기때문에 사용하나..? 
+interface Person {
+    name: string;
+  }
+  interface Drinker {
+    drink: string;
+  }
+  interface Developer extends Person, Drinker {
+    skill: string;
+  }
+  const fe = {} as Developer;
+  fe.name = 'josh';
+  fe.skill = 'TypeScript';
+  fe.drink = 'Beer';
+
+  // ! void : 반환 값이 없는 함수의 반환타입
+  // 함수의 반환 타입을 void로 지정 => 반환값이 필요하지 않을때 사용
+  // ex.콘솔 출력, DOM을 조작하는 함수
+
+  function func() : void {
+    console.log('sth')
+  }
+
+  function onClick(): void {
+    console.log("button Clicked")
+  }
