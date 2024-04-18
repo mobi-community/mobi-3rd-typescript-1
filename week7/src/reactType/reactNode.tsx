@@ -10,33 +10,36 @@
  */
 
 import { S } from "../styles/cssStyle";
-import React from "react";
+import React, { ReactNode } from "react";
 
-interface User {
-    name: string;
-    age?: number;
-}
+type Props = {
+    children: ReactNode;
+};
 
-const ReactFC: React.FC<User> = ({ name, age }) => {
+const Container: React.FC<Props> = ({ children }) => {
+    return <div>{children}</div>;
+};
+
+const ReactNode = () => {
     const content = `
-    interface User {name: string;age?: number;}
-
-    const ReactFC: React.FC<User> = ({name, age}) => {
+        type Props = {children: ReactNode;}
+        const Container: React.FC<Props> = ({ children }) => {
+            return <div>{children}</div>}
     `;
 
     return (
         <S.Container>
             <S.Box>
-                <h1>React.FC</h1>
+                <h1>ReactNode</h1>
                 <S.Wrapper>
                     <S.Text>
-                        <S.Pre>{content}</S.Pre>
-                        <p>{name}</p>
-                        {age && <p>{age}</p>}
+                        <Container>
+                            <S.Pre>{content}</S.Pre>
+                        </Container>
                     </S.Text>
                 </S.Wrapper>
             </S.Box>
         </S.Container>
     );
 };
-export default ReactFC;
+export default ReactNode;

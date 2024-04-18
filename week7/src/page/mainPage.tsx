@@ -51,7 +51,7 @@ const MainPage = () => {
                                 {item.title}
                             </Title>
                             <Content isVisible={isOpen[item.id]}>
-                                {isOpen[item.id] && <div>{item.content}</div>}
+                                {isOpen[item.id] && <p>{item.content}</p>}
                                 {isOpen[item.id] && <div>{item.component}</div>}
                             </Content>
                         </Wrapper>
@@ -111,4 +111,5 @@ const Wrapper = styled.div`
 
 const Content = styled.div<VisibilityProps>`
     display: ${(props) => (props.isVisible ? "block" : "none")};
+    white-space: pre-wrap;
 `;
