@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Definition } from "../data/defaultDefinition";
 import { useState } from "react";
 import { UtilDefinition } from "../data/utilDefinition";
+import { ReactTypeDefinition } from "../data/reactTypeDefinition";
 
 interface OpenStates {
     [ket: number]: boolean;
@@ -43,6 +44,23 @@ const MainPage = () => {
             <h1>타입스크립트의 유틸리티 타입</h1>
             <Box>
                 {UtilDefinition.map((item) => (
+                    <>
+                        <div style={{ height: "10px" }}></div>
+                        <Wrapper key={item.id}>
+                            <Title onClick={() => toggleItem(item.id)}>
+                                {item.title}
+                            </Title>
+                            <Content isVisible={isOpen[item.id]}>
+                                {isOpen[item.id] && <div>{item.content}</div>}
+                                {isOpen[item.id] && <div>{item.component}</div>}
+                            </Content>
+                        </Wrapper>
+                    </>
+                ))}
+            </Box>
+            <h1>React에서 사용 가능한 Type</h1>
+            <Box>
+                {ReactTypeDefinition.map((item) => (
                     <>
                         <div style={{ height: "10px" }}></div>
                         <Wrapper key={item.id}>

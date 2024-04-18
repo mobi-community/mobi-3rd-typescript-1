@@ -4,8 +4,8 @@
  *  특정 조건을 만족하는 타입의 서브셋을 추출할 때 유용하게 사용된다
  */
 
-import styled from "styled-components";
 import { S } from "../styles/cssStyle";
+import Spacer from "../components/spacer";
 
 const Extract = () => {
     // 기본 사용 예제
@@ -47,7 +47,7 @@ const Extract = () => {
                         <p>결과 : {color}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         함수 매개변수로 사용
