@@ -4,6 +4,7 @@
  *  코드 중복을 줄이고, 타입 안정성을 높이며, 유지보수를 용이하게 한다
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 const Generic = () => {
@@ -62,7 +63,7 @@ const Generic = () => {
                         <p>number : {numberResult}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         배열 반환 (length 구하기)
@@ -70,7 +71,7 @@ const Generic = () => {
                         <p> 결과 : {lengths}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         객체의 특정 속성을 추출

@@ -9,16 +9,22 @@ import { S } from "../styles/cssStyle";
 const Boolean = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
+    const content = `
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    `;
+
     return (
         <S.Container>
             <S.Box>
                 <h1>Boolean Type</h1>
-                <p>{`const [isOpen, setIsOpen] = useState<boolean>(false);`}</p>
                 <S.Wrapper>
-                    <button onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen && <div>Boolean Test</div>}
-                        {isOpen ? "숨김" : "열림"}
-                    </button>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        <button onClick={() => setIsOpen(!isOpen)}>
+                            {isOpen && <div>Boolean Test</div>}
+                            {isOpen ? "숨김" : "열림"}
+                        </button>
+                    </S.Text>
                 </S.Wrapper>
             </S.Box>
         </S.Container>

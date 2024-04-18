@@ -6,6 +6,7 @@
 
 import styled from "styled-components";
 import { S } from "../styles/cssStyle";
+import Spacer from "../components/spacer";
 
 const ReturnType = () => {
     // 기본 사용 예제
@@ -44,7 +45,7 @@ const ReturnType = () => {
                         <p>결과 : {myNumber}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         함수 매개변수로 사용

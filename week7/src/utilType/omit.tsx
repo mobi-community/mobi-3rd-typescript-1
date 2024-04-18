@@ -4,6 +4,7 @@
  *  객체 타입을 조작하여 새로운 타입을 도출하는데 도움을 주며, 타입 세이프티를 유지하면서 필요하지 않은 속성을 제거할 수 있다
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 interface User {
@@ -23,8 +24,7 @@ const Omit = () => {
     const content = `
     const user: UserLocation = {
         name: "jinsol",
-        age: 10005,
-    };
+        age: 10005,};
     `;
 
     // 여러 속성 제거
@@ -34,9 +34,7 @@ const Omit = () => {
     };
     const content1 = `
     type UserAgeLocation = Omit<User, "age" | "location">;
-    const userDetails: UserAgeLocation = {
-        name: "sol",
-    };
+    const userDetails: UserAgeLocation = {name: "sol",};
     `;
 
     return (
@@ -52,7 +50,7 @@ const Omit = () => {
                         <p>{user.age}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         여러 속성 제거

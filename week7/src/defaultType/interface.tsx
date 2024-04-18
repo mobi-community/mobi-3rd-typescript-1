@@ -4,6 +4,7 @@
  * 인터페이스를 통해 특정 구조를 갖춘 객체만이 특정 함수나 클래스에 전달될 수 있도록 제한할 수 있다.
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 interface User {
@@ -12,9 +13,16 @@ interface User {
     age: number;
 }
 
+const content = `
+    interface User {id: number;name: string;age: number;}   
+    `;
+
 interface Add extends User {
     add: string;
 }
+const content1 = `
+interface Add extends User {add: string;}
+`;
 
 const Interface = () => {
     const users = (user: User) => {
@@ -33,16 +41,31 @@ const Interface = () => {
         age: 5000,
         add: "test",
     };
+    const content2 = `
+    const users = (user: User) => {return user.name;};
+
+    const user: User = {id: 1,name: "jinsol",age: 1000,};
+
+    const add: Add = {id: 2,name: "sol",age: 5000,add: "test",};
+    `;
 
     return (
         <S.Container>
             <S.Box>
                 <h1>Interface Type</h1>
-                <p>{`interface User {id: number;name: string;age: number;}`}</p>
-                <p>{`interface Add extends User {add: string;}`}</p>
                 <S.Wrapper>
-                    <p>{users(user)}</p>
-                    <p>{users(add)}</p>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        <S.Pre>{content1}</S.Pre>
+                    </S.Text>
+                </S.Wrapper>
+                <Spacer height="10px" />
+                <S.Wrapper>
+                    <S.Text>
+                        <S.Pre>{content2}</S.Pre>
+                        <p>{users(user)}</p>
+                        <p>{users(add)}</p>
+                    </S.Text>
                 </S.Wrapper>
             </S.Box>
         </S.Container>

@@ -17,17 +17,27 @@ const Unknown = () => {
             return "지원되지 않는 타입입니다.";
         }
     };
+    const content = `
+    const viewValue = (val: unknown) => {
+        if (typeof val === "number") {
+            return val + 1;
+        } else if (typeof val === "string") {
+            return val.toUpperCase();
+        } else {
+            return "지원되지 않는 타입입니다.";}};
+    `;
 
     return (
         <S.Container>
             <S.Box>
                 <h1>Unknown Type</h1>
-                <p>{`const viewValue = (val: unknown) => `}</p>
-                <p>{`{if (typeof val === "number") {return val + 1;}};`}</p>
                 <S.Wrapper>
-                    <p>{viewValue(1)}</p>
-                    <p>{viewValue("abc")}</p>
-                    <p>{viewValue([1, 2, 3])}</p>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        <p>{viewValue(1)}</p>
+                        <p>{viewValue("abc")}</p>
+                        <p>{viewValue([1, 2, 3])}</p>
+                    </S.Text>
                 </S.Wrapper>
             </S.Box>
         </S.Container>

@@ -5,6 +5,7 @@
  *  컴파일러가 더 엄격한 타입 검사를 수행하도록 할 수 있다.
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 const AsConst = () => {
@@ -13,18 +14,31 @@ const AsConst = () => {
     const handleError = (message: typeof status) => {
         return `Error: ${message}`;
     };
+    const content = `
+    const status = "error" as const;
+    const handleError = (message: typeof status) => {
+        return 'Error: $.{message}';}; //.은 빼야합니다
+    `;
 
     // 객체에 사용
     const config = {
         name: "sol",
         age: 129,
     } as const;
+    const content1 = `
+    const config = {name: "sol",age: 129,} as const;
+    `;
 
     // 배열에 사용
     const colors = ["red", "green", "blue"] as const;
     const setColor = (color: (typeof colors)[number]) => {
         return `set to ${color}`;
     };
+    const content2 = `
+    const colors = ["red", "green", "blue"] as const;
+    const setColor = (color: (typeof colors)[number]) => 
+    {return 'set to $.{color}';}; //.은 빼야합니다
+    `;
 
     return (
         <S.Container>
@@ -47,20 +61,29 @@ const AsConst = () => {
                     할당할 수 없게한다
                 </p>
                 <S.Wrapper>
-                    <p>
+                    <S.Text>
                         변수에 사용하기
+                        <S.Pre>{content}</S.Pre>
                         <p>{handleError("error")}</p>
-                    </p>
-                    <p>
+                    </S.Text>
+                </S.Wrapper>
+                <Spacer height="10px" />
+                <S.Wrapper>
+                    <S.Text>
                         객체에 사용하기
+                        <S.Pre>{content1}</S.Pre>
                         <p>
                             {config.name} {config.age}
                         </p>
-                    </p>
-                    <p>
+                    </S.Text>
+                </S.Wrapper>
+                <Spacer height="10px" />
+                <S.Wrapper>
+                    <S.Text>
                         배열에 사용하기
+                        <S.Pre>{content2}</S.Pre>
                         <p>{setColor("blue")}</p>
-                    </p>
+                    </S.Text>
                 </S.Wrapper>
             </S.Box>
         </S.Container>

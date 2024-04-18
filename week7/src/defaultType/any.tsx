@@ -9,15 +9,20 @@ const Any = () => {
     const event = (e: any) => {
         return e;
     };
+    const content = `
+    const event = (e: any) => {return e;};
+    `;
 
     return (
         <S.Container>
             <S.Box>
                 <h1>Any Type</h1>
-                <p>{`const event = (e: any)=>{return e;};`}</p>
                 <S.Wrapper>
-                    <p>{event(1234)}</p>
-                    <p>{event("가나다")}</p>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        <p>{event(1234)}</p>
+                        <p>{event("가나다")}</p>
+                    </S.Text>
                 </S.Wrapper>
             </S.Box>
         </S.Container>

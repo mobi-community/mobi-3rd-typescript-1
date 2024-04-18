@@ -3,6 +3,7 @@
  *  속성 이름 뒤에 ?(물음표)를 붙여서 표시하며, 이는 해당 속성이 해당 타입의 객체에서 있어도 되고 없어도 되는 것을 의미한다.
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 const Optional = () => {
@@ -19,17 +20,9 @@ const Optional = () => {
         age: 1000,
     };
 
-    const content = `interface Person {
-        name: string;
-        age?: number;
-    }
-    const person1: Person = {
-        name: "jin",
-    };
-    const person2: Person = {
-        name: "sol",
-        age: 1000,
-    };`;
+    const content = `interface Person {name: string;age?: number;}
+    const person1: Person = {name: "jin",};
+    const person2: Person = {name: "sol",age: 1000,};`;
 
     // 함수 매개변수 사용
     const greet = (person: Person) => {
@@ -54,21 +47,15 @@ const Optional = () => {
     };
 
     const content2 = `
-    interface Info extends Person {
-        email: string;
-        location?: string;
-    }
-    const info: Info = {
-        name: "jin",
-        email: "jin@example.com",
-    };
+    interface Info extends Person {email: string;location?: string;}
+    const info: Info = {name: "jin",email: "jin@example.com",};
 
     `;
 
     return (
         <S.Container>
             <S.Box>
-                <h1>ReturnType</h1>
+                <h1>Optional</h1>
                 <p>{`interfact Person {name:string; age?: number;}`}</p>
                 <S.Wrapper>
                     <S.Text>
@@ -80,7 +67,7 @@ const Optional = () => {
                         </p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         함수 매개변수로 사용
@@ -88,7 +75,7 @@ const Optional = () => {
                         <p> 결과 : {greet({ name: "sol", age: 20 })}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         인터페이스 확장 시 선택적 속성

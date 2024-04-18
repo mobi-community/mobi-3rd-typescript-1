@@ -12,12 +12,23 @@ interface UnionProps {
 }
 
 const Union: React.FC<UnionProps> = ({ title }) => {
+    const content = `
+    interface UnionProps {
+        title: string | number;
+    }
+    const Union: React.FC<UnionProps> = ({ title }) => {
+    `;
+
     return (
         <S.Container>
             <S.Box>
                 <h1>Union Type</h1>
-                <p>{`interface UnionProps {title: string | number;}`}</p>
-                <S.Wrapper>{title}</S.Wrapper>
+                <S.Wrapper>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        {title}
+                    </S.Text>
+                </S.Wrapper>
             </S.Box>
         </S.Container>
     );

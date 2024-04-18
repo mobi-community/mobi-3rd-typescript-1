@@ -3,6 +3,7 @@
  *  주로 타입 안정성을 보장하고, 타입 계약을 명시적으로 표현하는데 도움을 준다.
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 const Satisfies = () => {
@@ -23,8 +24,8 @@ const Satisfies = () => {
     const content = `
     interface User {
         name: string;
-        age: number;
-    }
+        age: number;}
+
     const user = {
         name: "sol",
         age: 29,
@@ -42,12 +43,8 @@ const Satisfies = () => {
     };
     const content1 = `
     const getUser = (): User => {
-        return {
-            name: "Gang",
-            age: 129,
-            extra: "data",
-        } satisfies User;
-    };
+        return {name: "Gang",age: 129,extra: "data",
+    } satisfies User;};
     `;
 
     // 유닛 테스트
@@ -60,12 +57,8 @@ const Satisfies = () => {
     } satisfies User;
     const content2 = `
     const testUser = (user:User) => {
-        return user.name.length > 0 && user.age >= 0;
-    }
-    const testUserData = {
-        name: "jinsol",
-        age: -100,
-    } satisfies User;
+        return user.name.length > 0 && user.age >= 0;}
+    const testUserData = {name: "jinsol",age: -100,} satisfies User;
     `;
 
     return (
@@ -81,7 +74,7 @@ const Satisfies = () => {
                         </p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         함수 매개변수로 사용
@@ -91,7 +84,7 @@ const Satisfies = () => {
                         </p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         인터페이스 확장 시 선택적 속성

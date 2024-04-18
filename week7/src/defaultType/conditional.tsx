@@ -17,13 +17,25 @@ const Conditional: React.FC<ConditionalProps> = ({ data }) => {
     const processedData: ProcessedData =
         typeof data === "string" ? data.toUpperCase() : "";
 
+    const content = `
+    interface ConditionalProps {data: string;}
+    
+    const Conditional: React.FC<ConditionalProps> = ({ data }) => {
+        type ProcessedData = typeof data extends string ? string : "";
+        const processedData: ProcessedData =
+            typeof data === "string" ? data.toUpperCase() : "";
+    `;
+
     return (
         <S.Container>
             <S.Box>
                 <h1>Conditional Type</h1>
-                <p>{`type ProcessedData = typeof data extends string ? string : "";`}</p>
-                <p>{` const processedData: ProcessedData = typeof data === "string" ? data.toUpperCase() : "";`}</p>
-                <S.Wrapper>결과 : {processedData}</S.Wrapper>
+                <S.Wrapper>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        <p>결과 : {processedData}</p>
+                    </S.Text>
+                </S.Wrapper>
             </S.Box>
         </S.Container>
     );

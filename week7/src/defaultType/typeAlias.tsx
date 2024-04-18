@@ -13,11 +13,26 @@ interface TypeAliasProps {
 }
 
 const TypeAlias: React.FC<TypeAliasProps> = ({ data }) => {
+    const content = `
+    type Data = string | number | boolean;
+
+    interface TypeAliasProps {
+        data: Data;
+    }
+    
+    const TypeAlias: React.FC<TypeAliasProps> = ({ data }) => {
+    `;
+
     return (
         <S.Container>
             <S.Box>
                 <h1>TypeAlias Type</h1>
-                <S.Wrapper>Data : {data.toString()}</S.Wrapper>
+                <S.Wrapper>
+                    <S.Text>
+                        <S.Pre>{content}</S.Pre>
+                        Data : {data.toString()}
+                    </S.Text>
+                </S.Wrapper>
             </S.Box>
         </S.Container>
     );

@@ -4,6 +4,7 @@
  *  'Pick'을 사용함으로써, 복잡한 타입에서 필요한 부분만을 간소화하여 새로운 타입을 정의할 수 있다.
  */
 
+import Spacer from "../components/spacer";
 import { S } from "../styles/cssStyle";
 
 const Pick = () => {
@@ -82,7 +83,7 @@ const Pick = () => {
                         <p></p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         함수 매개변수로 사용
@@ -90,7 +91,7 @@ const Pick = () => {
                         <p>{sendEamil({ email: "sol@example.com" })}</p>
                     </S.Text>
                 </S.Wrapper>
-                <div style={{ height: "10px" }} />
+                <Spacer height="10px" />
                 <S.Wrapper>
                     <S.Text>
                         복수의 타입 결합해서 사용
