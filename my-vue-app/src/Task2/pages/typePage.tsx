@@ -1,17 +1,16 @@
 import React, { ComponentType } from "react";
-// import AnyPage from "./anyPage";
 import BooleanPage from "./boolean";
 import NumberPage from "./numberPage";
 import StringPage from "./stringPage";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-// import AnyPage from "./anyPage";
+import AnyPage from "./anyPage";
 
 const pageComponentOfType: Record<string, ComponentType> = {
   number: NumberPage,
   string: StringPage,
   boolean: BooleanPage,
-  // any: AnyPage,
+  any: AnyPage,
 };
 
 const TypePage: React.ComponentType = () => {
