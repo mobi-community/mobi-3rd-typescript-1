@@ -1,5 +1,10 @@
-import React, { PropsWithChildren, PropsWithRef } from "react"
+import { Dispatch, FC, PropsWithChildren, PropsWithRef, forwardRef, useRef, useState } from "react"
 
-export const Greet: React.FC<PropsWithChildren> = () => {
-  return "Hello World"
+
+
+
+export const Greet: Dispatch  ({ children }) => {
+  const [state,setState] = useState<number>(0)
+  console.log(test)
+  return <div>{children}</div>
 }
