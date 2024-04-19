@@ -1,8 +1,20 @@
-import "./App.css"
-import { Test } from "./Task4/test"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/main";
+import Todo from "./pages/todo";
 
 function App() {
-  return <Test title="test">gdgd</Test>
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/todo",
+      element: <Todo />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
