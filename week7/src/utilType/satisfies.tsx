@@ -18,7 +18,7 @@ const Satisfies = () => {
     const user = {
         name: "sol",
         age: 29,
-        location: "seoul",
+        // location: "seoul",
     } satisfies User;
 
     const content = `
@@ -38,7 +38,7 @@ const Satisfies = () => {
         return {
             name: "Gang",
             age: 129,
-            extra: "data",
+            // extra: "data",
         } satisfies User;
     };
     const content1 = `
@@ -70,7 +70,7 @@ const Satisfies = () => {
                         기본 사용
                         <S.Pre>{content}</S.Pre>
                         <p>
-                            {user.name} {user.age} {user.location}
+                            {user.name} {user.age}
                         </p>
                     </S.Text>
                 </S.Wrapper>
