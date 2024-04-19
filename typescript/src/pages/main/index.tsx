@@ -1,17 +1,19 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../../compoents/button/Button";
+import { useNavigate } from "react-router-dom"
+import Button from "../../compoents/button/Button"
 
 const Home = () => {
-  const navigator = useNavigate();
+  const navigator = useNavigate()
   const natvigateToTodoPage = () => {
-    navigator("/todo");
-  };
+    navigator("/todo")
+  }
 
   return (
     <div>
       <h1>Home</h1>
-      <Button onClick={natvigateToTodoPage}>Go to TodoPage</Button>
+      <Button variant="primary" onClick={natvigateToTodoPage}>
+        Go to TodoPage
+      </Button>
     </div>
-  );
-};
-export default Home;
+  )
+}
+export default Home

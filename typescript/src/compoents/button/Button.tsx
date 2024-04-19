@@ -1,4 +1,16 @@
-const Button = ({ variant, size, children, ...rest }) => {
+import { FC, PropsWithChildren } from "react"
+type BtnProps = {
+  variant?: "primary"
+  size?: "small"
+  onClick: () => void
+}
+const Button: FC<PropsWithChildren<BtnProps>> = ({
+  variant,
+  size,
+  children,
+  onClick,
+  ...rest
+}) => {
   return (
     <button
       style={{
@@ -10,11 +22,12 @@ const Button = ({ variant, size, children, ...rest }) => {
         border: "none",
         cursor: "pointer",
       }}
+      onClick={onClick}
       {...rest}
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

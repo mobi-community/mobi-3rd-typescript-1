@@ -1,16 +1,24 @@
-const OneTodo = ({ todo }) => {
+import { FC } from "react"
+
+type TodoListType = {
+  title: string
+  content: string
+  state: boolean
+}
+
+const OneTodo: FC<TodoListType> = ({ title, content, state }) => {
   return (
     <>
-      <div>{todo.title}</div>
-      <div>{todo.content}</div>
+      <div>{title}</div>
+      <div>{content}</div>
       <div
         style={{
-          color: todo.state ? "green" : "red",
+          color: state ? "green" : "red",
         }}
       >
-        {todo.state ? "Done" : "Not Done"}
+        {state ? "Done" : "Not Done"}
       </div>
     </>
-  );
-};
-export default OneTodo;
+  )
+}
+export default OneTodo

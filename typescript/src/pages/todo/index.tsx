@@ -1,8 +1,14 @@
-import { useEffect, useState } from "react";
-import OneTodo from "./components/one-todo";
+import { useEffect, useState } from "react"
+import OneTodo from "./components/one-todo"
+
+type TodoListType = {
+  title: string
+  content: string
+  state: boolean
+}
 
 const Todo = () => {
-  const [todoLsit, setTodoLsit] = useState([]);
+  const [todoLsit, setTodoLsit] = useState<Array<TodoListType>>([])
 
   useEffect(() => {
     setTodoLsit([
@@ -21,16 +27,16 @@ const Todo = () => {
         content: "content3",
         state: false,
       },
-    ]);
-  }, []);
+    ])
+  }, [])
 
   return (
     <div>
       <h1>Todo Page</h1>
-      {todoLsit.map((todo) => (
-        <OneTodo todo={todo} />
+      {todoLsit.map((todo: TodoListType) => (
+        <OneTodo {...todo} />
       ))}
     </div>
-  );
-};
-export default Todo;
+  )
+}
+export default Todo
