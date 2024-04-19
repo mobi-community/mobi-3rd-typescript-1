@@ -1,52 +1,37 @@
-# mobi-3rd-typescript-1
-### 3주차
-<a href="https://lyrical-brain-e0f.notion.site/mobi-typescript-week1-842b561374934a6d8af07b45fceaf43d">@see</a>
+# Mobi-3rd-typescript-1
 
-### 기간
-```
-2024.04.15 ~ 2024.04.20 (일요일 리뷰 가능하도록 PR 남기기, 스프레티드시트에 링크 등록)
-2024.04.21 (WIL, 다른 페어 코드 리뷰, 1주차 회고 및 느낀점 발표)
+## 프로젝트 개요
 
-* 반드시 리드미에 프로젝트 개요와 설명, 시연 영상 등을 함께 작성해주세요 :)
-```
+Task 1~6까지 진행해보며 typescript의 장단점, 사용법 등을 학습합니다.
 
-### 페어-편성
-```
-1페어 Gang - Wendy
-2페어 Brilly - Riel
-```
+## Task1 타입스크립트란? (300자 이상)
 
-### 과제
-```
-1. 타입스크립트란 무엇일까요?
-2. 실무에서 자주 사용하는 타입 바로 알기
-3. 타입스크립트 바로 잡기
-4. React의 Typescript
-5. 문제 풀어보기
-6. Check List
-```
+- TypeScript 와 JavaScript의 차이점을 비교해보고 TypeScirpt 장점을 정리했습니다.
 
-### 진행방법
-```
-1. 페어는 각자 함께 할 수 있는 시간을 선정합니다.
-2. 시간 선정이 완료되면 mobi 단톡방에 월~일요일 단위로 올려주세요.
-ex)
-  월 
-  - Jeff (14:00 ~ 22:00)
-  - Lucas (08:00 ~ 20:00)
-  - core-time (20:00~22:00) -- 코어 타임은 매일 매일 가져야합니다. 겹치는 시간을 최대한 활용하고 블락킹 된 부분과 풀이한 부분을 공유할 것
+- Task1 Link주소 : [타입스크립트 정리](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/Pair1-Chan/Task1~3/README.md)
 
-  화 ...
-  ...
-  목 - 리프레쉬 데이 (같은 페어일 경우 요일 고정)
-  ...
-  일
-  - 20:00~22:00 WIL
-  - 22:00~23:00 1주차 회고 및 느낀점
-  - 23:00~01:00 각 페어 코드 리뷰 -- 반드시 PR로 문서화할 것
+## Task2 타입연습
 
+- TypeScript 의 원시타입들 & 유틸타입들의 정의를 작성하고 간단한예시 작성했습니다.
 
-2. 과제는 스스로 풀어본 이후에 코어 타임에는 반드시 페어와 함께 고민하고 블락킹 된 부분의 해소와 풀이를 공유해야합니다.
-3. 매일 매일 풀이한 과제는 해당 레포지토리에 브랜치에 Pair-n으로 commit-push 합니다. (리프레쉬 제외 1일 1커밋 준수)
-4. 학습 시간에는 모비 항상 디스코드에 접속해서 학습을 진행해주셔야 합니다.
-```
+- Task2 Link주소 : [타입스크립트 타입연습](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/Pair1-Chan/Task1~3/Tas2.ts)
+
+## Task3 타입스크립트의 장단점
+
+- 타입스크립트의 장단점을 알아보고 어느순간 적용해야할지 작성했습니다.
+- Task3 Link주소 : [타입스크립장단점 ](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/Pair1-Chan/Task1~3/Task3.txt)
+
+## Task4 React.FC 와 React의 유틸타입들
+
+- React.FC가 React18 전과후로 어떻게 바뀌었는지 알아보고 React에서 제공해주는 유틸타입들을 어떻게 사용하는지 알아봤습니다.
+- Task4 Link주소 : [React.FC](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/Pair1-Chan/typescript/README.md)
+
+## Task5 문제풀어보기
+
+- 1~4까지의 질문에 답하며 위에서 알아본 것들을 적용했습니다.
+- Task5-1~3 Link주소 : [1~3번 README정리](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/Pair1-Chan/typescript/README.md)
+- Task5-4 Link주소 : [todolist 타입정해주기](https://github.com/mobi-community/mobi-3rd-typescript-1/tree/Pair1-Chan/typescript/src/pages)
+
+## 회고
+패스를 진행하며 TS의 장단점, 사용법등은 잘 익혔지만 아직 generic에대해 충분한 이해를 하지 못한것 같습니다. React에서 제공해주는 유틸타입들을 이해하기 위해 index.ds.t 에가서 어떻게 정의되어있나 확인을 했는데 정의된 코드를 완전히 이해하기가 힘들었습니다. extends, infer등으로 타입 추론을 해서 여러가지 경우의 수를 대비해둔 것 같은데 다른사람이 정의한 타입들도 이해를 하기위해선 이부분을 좀더 공부해야 할 것 같습니다.
+이번 패스를 진행하며 그래도 typscript의 기본적인 부분들은 충분히 공부 할 수 있었습니다.
