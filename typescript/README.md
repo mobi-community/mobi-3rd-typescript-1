@@ -204,13 +204,16 @@ const ChildrenBtn =({...props들}:BtnProps)=>{
 ```
 
 ## Dispatch
-Dispatch타입은 useReducer나 Redux같은 상태관리 라이브러리에서 주로 사용되는데 Dispatch타입은 
+
+Dispatch타입은 useReducer나 Redux같은 상태관리 라이브러리에서 주로 사용되는데 Dispatch타입은
+
 ```JS
 type Dispatch<A> = (value: A) => void;
     /**
      * A {@link Dispatch} function can sometimes be called without any arguments.
      */
 ```
+
 다음과 같이 정의되어 있다.
 Dispatch는 액션을 전달받아서 상태를 업데이트하는 함수의 타입을 정의할때 사용된다 위의 예시처럼 setState에서도 사용된다.
 
@@ -223,3 +226,57 @@ index.d.ts로 가서 확인해보면 다양한 이벤트들이 정의되어있�
 ```JS
 SomeEvent<DOM요소> 의형태로 사용할 수 있다
 ```
+
+# Task5
+
+## 1.타입을 주어야하는 경우와 주지 않아도 되는 경우를 구분하여 타입을 정의하세요
+
+```JS
+// 아래와같이 직접 타입추론이 가능한경우에는 명시해주지 않아도된다. age=20으르 할당하는 순간 age의타입은 number타입으로 추론이가능
+let seongyong = {
+	age: 20,
+  height: 190,
+}
+// obj에 어떤타입이 올수있는 명시해줘야한다. 매개변수에 어떤것들이 올수있는지 정확하게 명시해주는 것이 좋다.
+function log(obj:typeof seongyong){
+	console.log(obj.height)
+  return obj
+}
+
+const a = log(seongyong)
+console.log(a.age)
+```
+
+## 2.react-typescript project 생성해보기
+
+init vite를 사용해서 typescript 생성완료
+
+# 3.생각 해보기
+
+type은 &를 사용해서 확장이가능하다.
+interface는 기존 선언했던것에 추가로 확장이가능하고 또한 extends keyword를 사용해서 상속이 가능하다.
+
+type은 모든 타입에 사용이가능하다.
+interface는 객체타입을 설정할때 사용할수있다.
+
+```JS
+type THuman = {
+  name : string,
+  age:number
+}
+type TGender = THuman & {
+  gender:"Man"|"Woman"
+}
+
+interface IHuman {
+  name : string,
+  age:number
+}
+interface IGender extends IHuman {
+   gender:"Man"|"Woman"
+}
+```
+
+개인적으로는 interface보다 type으로 사용하는게 좋아보인다.
+interface는 확장이가능하기때문에 재사용 면에서는 편할것 같지만 상속이나 확장된 타입이 많아질수록
+이전에 어떤 값을가지고 있엇는지 찾아가서 확인해야할 경우가 생긴다면 관리의 어려움이 있을것 같다.
