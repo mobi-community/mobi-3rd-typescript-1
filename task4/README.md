@@ -192,18 +192,39 @@ const PWRTComponent = () => {
 <br/>
 <br/>
 
-## 6. RefObject
+## 6. RefObject 
 
-- reference 값을 생성/관리 하는 'useRef()' 의 반환타입 중 하나이다.
+- 컴포넌트의 리랜더링에 상관없이 값을 유지하는 reference 객체 타입이다.
 
+- 'useRef()' 의 반환타입 중 하나이다.
+  - 'useRef' 에 대한 정의는 3개이다.
+  - `RefObject` 타입을 반환하는 경우는 초기값이 null 인데, 제네릭에 전달된 타입은 이와 다른 경우이다.
+  - 이 때, 'current' 속성 값을 변경하는 것이 금지된다. (단, 'current' 하위의 속성을 변경하는 것은 가능하다.)
+  - DOM 요소를 직접 조작하기 위한 용도로 주로 사용한다.
+```ts
+const SomeComponent = () => {
+  const inputRef = useRef<HTMLInputElement>(null); // 초기값 null, RefObject type 반환
+  const handleButtonClick = () => {
+    if (inputRef.current) {
+      inputRef.current.value = ""; // 'current' 변경 불가, 그 하위 property 변경 가능.!
+    }
+  };
+  return (
+    <>
+      <button onClick={handleButtonClick}>Clear</button>
+      <input ref={inputRef}/>
+    </>
+  )
+}
+```
 
 ### MutableRefObject
-- typescript 에서는 저장하려는 값의 타입을 미리 지정해주어야 한다.
+- 'useRef()' 의 'current' 속성에 저장하려는 값의 타입을 미리 지정해주어야 한다.
+- 'current' 의 값을 수정할 수 있다.
+- 컴포넌트의 리랜더링과 상관없이, 값을 저장하기 위한 용도로 주로 사용한다.
 ```typescript
-// 이후에 저장하는 값을 수정하더라도 number 타입이어야 한다.
-const saveNumberRef : MutableRefObject<number> = useRef<number>(0);
+const saveNumberRef : MutableRefObject<number> = useRef<number>(0); //  초기값의 타입 == number, MutableRefObject type 반환
 ```
-- 값을 저장하거나, DOM 속성을 변경하려는 용도로 사용한다.
 
 ----
 <br/>
