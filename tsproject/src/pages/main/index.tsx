@@ -3,14 +3,14 @@ import Button from "../../compoents/button/Button";
 
 const Home = () => {
   const navigator = useNavigate();
-  const natvigateToTodoPage = () => {
+  const navigateToTodoPage = () => {
     navigator("/todo");
   };
 
   return (
     <div>
       <h1>Home</h1>
-      <Button onClick={natvigateToTodoPage}>Go to TodoPage</Button>
+      <Button onClick={navigateToTodoPage}>Go to TodoPage</Button>
     </div>
   );
 };
