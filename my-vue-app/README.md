@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# Mobi-3rd-typescript-1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 개요
 
-Currently, two official plugins are available:
+Task 1~6까지 진행해보며 typescript의 장단점, 사용법 등을 학습합니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Task1 타입스크립트란? (300자 이상)
 
-## Expanding the ESLint configuration
+TypeScript 와 JavaScript의 차이점 비교 및 TypeScirpt 장점 정리<br/>
+`Task1 폴더 > Task1.txt`파일에 작성했습니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Task2 타입연습
 
-- Configure the top-level `parserOptions` property like this:
+TypeScript의 기본타입과 유틸리티 타입에 대한 정리 및 간단한 예시 </br>
+`Task2 폴더 > Type정의.txt, TypeEx.tsx` 파일에 작성했습니다.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Task3 타입스크립트의 장단점
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+타입스크립트의 장단점 알아보기 <br/>
+`Task3 폴더 > 타입스크립트의장단점.txt` 파일에 작성했습니다.
+
+## Task4 React.FC 와 React의 유틸타입들
+
+미완료 (정리 예정)
+
+## Task5 문제풀어보기
+
+미완료
+
+## 회고
+
+이번 패스는 TS의 기본 개념을 이해하고 예시 코드를 작성해볼 수 있는 의미있는 시간이 아니었나 싶습니다. 예시 코드를 작성하면서 TS의 사용법에 대해 익힐 수 있었습니다. 유틸리티 타입에 대해서는 아직 조금 더 사용해봐야 이해할 수 있을 것 같지만 코드 작성이 개념에 대해 이해하는데 큰 도움이 되었습니다. </br>
+토요일 기준 Task3까지밖에 진행하지 못하였지만 일단 PR을 올린 후 Task4, 5도 진행해볼 예정입니다.
