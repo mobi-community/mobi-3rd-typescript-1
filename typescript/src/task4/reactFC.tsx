@@ -10,7 +10,7 @@ const TestReactFC : React.FC<TestFC> = ({name, age})=> {
         </>
     )
 }
-TestReactFC.displayName = "HELLOOOOO"
+TestReactFC.displayName = "HELLOOOOO" // ? 디버깅 용도로 쓴다는데 ..?
 TestReactFC.defaultProps = {
     name:"weenddyyy"
 }
