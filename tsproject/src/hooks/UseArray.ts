@@ -11,7 +11,7 @@ export const useArray = <T>( initArray: Array<T> | (()=>Promise<Array<T>>) ) => 
   // 함수인지를 체크하는 타입 가드
   const isFunction = useCallback(
     (initArray: unknown): initArray is () => Promise<Array<T>> => {
-      return (typeof initArray !== 'function')
+      return (typeof initArray === 'function')
     }, []
   );
   
