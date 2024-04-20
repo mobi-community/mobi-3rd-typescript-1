@@ -1,9 +1,12 @@
-const Button = ({ variant, size, children, ...rest }) => {
+import type { FC, PropsWithChildren } from 'react';
+import type { ButtonProps } from './Button.type';
+
+const Button: FC<PropsWithChildren<ButtonProps>> = ( props, rest ) => {
   return (
     <button
       style={{
-        backgroundColor: variant === "primary" ? "blue" : "red",
-        fontSize: size === "small" ? "10px" : "20px",
+        backgroundColor: props.variant === "primary" ? "blue" : "red",
+        fontSize: props.size === "small" ? "10px" : "20px",
         color: "white",
         padding: "10px",
         borderRadius: "5px",
@@ -12,7 +15,7 @@ const Button = ({ variant, size, children, ...rest }) => {
       }}
       {...rest}
     >
-      {children}
+      {props.children}
     </button>
   );
 };

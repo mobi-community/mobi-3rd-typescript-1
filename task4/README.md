@@ -1,3 +1,5 @@
+# React Type 정리하기
+
 ## 1. React.FC
   - FC는 Functional Component의 약어이다.
   - React 함수형 컴포넌트를 정의하기 위한 타입이다.
@@ -274,7 +276,7 @@ const CounterComponent = (props: DTestProps) => {
   - 주로 <form> 요소에 사용되며, 폼 전송(submit), 잘못된 입력(validation) 등과 관련된 정보 가진다.
 - HTML<>Element
   - HTML 요소에 대한 제네릭 타입
-  - HTMLDivElement는 <div> 요소를 나타내는 타입이고, HTMLAnchorElement는 <a> 요소를 나타낸다.
+  - HTMLDivElement는 `<div>` 요소를 나타내는 타입이고, HTMLAnchorElement는 `<a>` 요소를 나타낸다.
   - 해당 요소가 가지는 속성과 메서드를 정의한다.
       
 
