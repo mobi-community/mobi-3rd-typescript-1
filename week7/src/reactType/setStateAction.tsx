@@ -6,11 +6,12 @@
 
 import { S } from "../styles/cssStyle";
 
-interface Props {
-    setState: React.Dispatch<React.SetStateAction<number>>;
-}
+// interface Props {
+//     setState: React.Dispatch<React.SetStateAction<number>>;
+// }
 
-const SetStateAction: React.FC<Props> = ({ setState }) => {
+// const SetStateAction: React.FC<Props> = ({ setState }) => {
+const SetStateAction: React.FC = () => {
     const content = `
     interface Props {
         setState: React.Dispatch<React.SetStateAction<number>>;}
@@ -25,9 +26,9 @@ const SetStateAction: React.FC<Props> = ({ setState }) => {
                 <S.Wrapper>
                     <S.Text>
                         <S.Pre>{content}</S.Pre>
-                        <button onClick={() => setState((prev) => prev + 1)}>
+                        {/* <button onClick={() => setState((prev) => prev + 1)}>
                             +
-                        </button>
+                        </button> */}
                     </S.Text>
                 </S.Wrapper>
             </S.Box>

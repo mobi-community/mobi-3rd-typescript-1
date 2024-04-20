@@ -95,7 +95,3 @@ const Array = () => {
     );
 };
 export default Array;
-
-const P = styled.p`
-    text-align: center;
-`;

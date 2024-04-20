@@ -19,13 +19,13 @@ const Enum = () => {
     enum Direction {Up,Down,Left,Right,}
 `;
 
-    // 문자형 열거형
-    enum strDeirection {
-        Up = "UP",
-        Down = "DOWN",
-        Left = "LEFT",
-        Right = "RIGHT",
-    }
+    // // 문자형 열거형
+    // enum strDeirection {
+    //     Up = "UP",
+    //     Down = "DOWN",
+    //     Left = "LEFT",
+    //     Right = "RIGHT",
+    // }
     const content1 = `
     enum strDeirection {
         Up = "UP",

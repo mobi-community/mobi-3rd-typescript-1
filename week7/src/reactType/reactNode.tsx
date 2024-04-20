@@ -10,7 +10,7 @@
  */
 
 import { S } from "../styles/cssStyle";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 type Props = {
     children: ReactNode;

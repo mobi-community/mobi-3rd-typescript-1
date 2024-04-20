@@ -4,7 +4,6 @@
  *  'ReturnType'을 사용함으로써 함수의 반환 값을 예상하고 이를 타입 체크에 활용할 수 있다.
  */
 
-import styled from "styled-components";
 import { S } from "../styles/cssStyle";
 import Spacer from "../components/spacer";
 
