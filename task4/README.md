@@ -168,7 +168,7 @@ interface PWRTestInputProps {
 }
 
 /** input 컴포넌트 */
-const PWRTestInput = forwardRef<PWRTestInputProps, HTMLInputElement>((props, ref) => {
+const PWRTestInput = forwardRef<HTMLInputElement, PWRTestInputProps>((props, ref) => {
   return <input ref={ref} />;
 });
 
