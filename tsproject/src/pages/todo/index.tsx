@@ -1,34 +1,19 @@
-import { useEffect, useState } from "react";
-import OneTodo from "./components/one-todo";
+import type { FC } from 'react';
+import { useArray } from '../../hooks/UseArray';
+import { TodoType } from '../../types/Todo.type';
+import { fetchTodoArray } from '../../utils/Fetch';
+import OneTodo from "./components/one-todo/OneTodo";
+// import { initTodoList } from '../../constants/InitState'
 
-const Todo = () => {
-  const [todoLsit, setTodoLsit] = useState([]);
-
-  useEffect(() => {
-    setTodoLsit([
-      {
-        title: "title1",
-        content: "content1",
-        state: true,
-      },
-      {
-        title: "title2",
-        content: "content2",
-        state: false,
-      },
-      {
-        title: "title3",
-        content: "content3",
-        state: false,
-      },
-    ]);
-  }, []);
+const Todo: FC = () => {
+  // const {array:todoList} = useArray<TodoType>(initTodoList)
+  const {array:todoList} = useArray<TodoType>(fetchTodoArray)
 
   return (
     <div>
       <h1>Todo Page</h1>
-      {todoLsit.map((todo) => (
-        <OneTodo todo={todo} />
+      {todoList.map((todo,idx) => (
+        <OneTodo key={idx} todo={todo} />
       ))}
     </div>
   );
