@@ -129,6 +129,11 @@ type TypeAliasDeclare = {
   prop2: string
 }
 ```
+<div align="center">
+
+<img width="434" alt="interface_type-alias_mixed_use" src="https://github.com/mobi-community/mobi-3rd-typescript-1/assets/50646145/7a03448d-e4f9-41a6-a316-513d7ee0b96f">
+
+</div>
 
 ### 🤔 개인 의견
 - interface 를 사용할 경우 속성의 이름과 해당 속성의 타입을 같이 설정해주야 하기 때문에, 메서드의 props 에 대한 타입 선언은 이것으로 하는 게 좋을 것 같다.
