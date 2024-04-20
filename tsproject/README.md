@@ -1,27 +1,17 @@
-# React + TypeScript + Vite
+# 타입 적용해보기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✍🏻 컨벤션
 
-Currently, two official plugins are available:
+- 파일명은 PascalCase
+- 폴더명은 kebob-case
+- props 가 필요한 컴포넌트는 props 의 type 을 정의한 `{컴포넌트명}.type.ts` 파일을 가짐.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 타입 시스템 실습 사항
+- React.FC
+  - 컴포넌트 props 의 타입을 선언부에 함께 명시
+- PropsWithChildren => `Button`
+  - children 속성을 자동으로 부여
+- Generic => `useArray`
+  - hook 에서 다룰 타입을 외부에서 주입받도록 설계
+- TypeGuard => `useArray`
+  - 파라미터 type 에 따라 분기  
