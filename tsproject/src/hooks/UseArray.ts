@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * 객체 배열을 관리하는 hook
@@ -7,6 +7,13 @@ import { useCallback, useEffect, useState } from "react"
  */
 export const useArray = <T>( initArray: Array<T> | (()=>Promise<Array<T>>) ) => {
   const [array, setArray] = useState<Array<T>>([])
+
+  // 함수인지를 체크하는 타입 가드
+  const isFunction = useCallback(
+    (initArray: unknown): initArray is () => Promise<Array<T>> => {
+      return (typeof initArray !== 'function')
+    }, []
+  );
   
   /**
    * useArray 파라미터로 fetching 함수가 전달되었을 시,
@@ -20,11 +27,11 @@ export const useArray = <T>( initArray: Array<T> | (()=>Promise<Array<T>>) ) => 
   )
 
   useEffect(() => {
-    if (Array.isArray(initArray)) 
-      setArray(initArray)
+    if (isFunction(initArray)) 
+      initAdapting(initArray)
     else 
-      initAdapting(initArray as ()=>Promise<Array<T>>)
-  }, [initArray, initAdapting])
+    setArray(initArray)
+  }, [initArray, initAdapting,isFunction])
 
   return {array}
 }
