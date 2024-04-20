@@ -1,5 +1,5 @@
+import type { TodoType } from "../../../../types/Todo.type";
+
 export interface OneTodoProps {
-  title: string
-  content: string
-  state: boolean
+  todo: TodoType
 }

@@ -1,16 +1,16 @@
 import type { FC } from "react";
 import type { OneTodoProps } from "./OneTodo.type";
-const OneTodo: FC<OneTodoProps> = (props) => {
+const OneTodo: FC<OneTodoProps> = ({todo}) => {
   return (
     <>
-      <div>{props.title}</div>
-      <div>{props.content}</div>
+      <div>{todo.title}</div>
+      <div>{todo.content}</div>
       <div
         style={{
-          color: props.state ? "green" : "red",
+          color: todo.state ? "green" : "red",
         }}
       >
-        {props.state ? "Done" : "Not Done"}
+        {todo.state ? "Done" : "Not Done"}
       </div>
     </>
   );
