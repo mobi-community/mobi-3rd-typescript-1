@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import type { ButtonProps } from './Button.type';
 
-const Button: FC<PropsWithChildren<ButtonProps>> = ( props, rest ) => {
+const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
   return (
     <button
       style={{
@@ -13,7 +13,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ( props, rest ) => {
         border: "none",
         cursor: "pointer",
       }}
-      {...rest}
+      {...props} 
     >
       {props.children}
     </button>
