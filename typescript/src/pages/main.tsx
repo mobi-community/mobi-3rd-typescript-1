@@ -5,6 +5,7 @@ import TestReactElement from "../task4/reactElement";
 import TestPropsWithChildren from "../task4/propsWithChildren";
 import { useRef } from "react";
 import TestPropsWithRef from "../task4/propsWithRef";
+import TestRefObject from "../task4/refObject";
 
 const MainPage = () => {
     const divRef = useRef<HTMLDivElement>(null);
@@ -45,6 +46,10 @@ const MainPage = () => {
                 <h2>propsWithRef 사용해보기</h2>
                 <TestPropsWithRef ref={divRef} text="안냐세요 웽딥니당" />
                 <button onClick={onClick}>Button을 눌러보거라</button>
+            </BorderBox>
+            <BorderBox>
+                <h2>refObject 사용해보기</h2>
+                <TestRefObject text="안녕하세요 웽디입니댱" />
             </BorderBox>
         </>
     );
