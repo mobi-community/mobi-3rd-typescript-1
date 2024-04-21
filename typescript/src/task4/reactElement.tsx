@@ -1,12 +1,12 @@
 type ReactElementProps = {
-    children: React.ReactElement
-}
+    children: React.ReactElement;
+};
 
-const TestReactElement = ({children}: ReactElementProps)=> {
+const TestReactElement = ({ children }: ReactElementProps) => {
     return (
         <>
-        <div>{children}</div>
+            <div>{children}</div>
         </>
-    )
+    );
 };
-export default TestReactElement
+export default TestReactElement;
