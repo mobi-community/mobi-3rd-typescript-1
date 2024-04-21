@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick }): ReactElement => {
     return <button onClick={onClick}>{label}</button>;
 };
 
-const ReactElement: React.FC = (): ReactElement => {
+const ReactElementPage: React.FC = (): ReactElement => {
     const handleClick = () => alert("버튼 클릭");
 
     const content = `
@@ -44,4 +44,4 @@ const ReactElement: React.FC = (): ReactElement => {
         </S.Container>
     );
 };
-export default ReactElement;
+export default ReactElementPage;

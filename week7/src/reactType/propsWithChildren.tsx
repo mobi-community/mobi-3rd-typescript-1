@@ -5,7 +5,8 @@
  */
 
 import { S } from "../styles/cssStyle";
-import React, { PropsWithChildren } from "react";
+import React from "react";
+import type { PropsWithChildren } from "react";
 
 type ContainerProps = {
     style?: React.CSSProperties;

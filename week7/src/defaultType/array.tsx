@@ -5,7 +5,6 @@
  * 기능적으로는 동일하다
  */
 
-import styled from "styled-components";
 import { S } from "../styles/cssStyle";
 
 const Array = () => {

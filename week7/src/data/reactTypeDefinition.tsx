@@ -1,7 +1,7 @@
 import PropsWithChildren from "../reactType/propsWithChildren";
-import ReactElement from "../reactType/reactElement";
+import ReactElementPage from "../reactType/reactElement";
 import ReactFC from "../reactType/reactFC";
-import ReactNode from "../reactType/reactNode";
+import ReactNodePage from "../reactType/reactNode";
 import RefObject from "../reactType/refObject";
 import SetStateAction from "../reactType/setStateAction";
 import DispatchPage from "../reactType/dispatch";
@@ -59,7 +59,7 @@ export const ReactTypeDefinition: Array<Arrangement> = [
         4.'ReactFragment'-그룹화된 자식을 나타내는 데 사용할 수 있습니다.
         5.'ReactPortal'-다른 DOM 하위 트리에 자식을 렌더링할 수 있다.
         `,
-        component: <ReactNode />,
+        component: <ReactNodePage />,
     },
     {
         id: 43,
@@ -70,7 +70,7 @@ export const ReactTypeDefinition: Array<Arrangement> = [
         React 컴포넌트 트리에서 특정한 노드를 의미한다.
         'ReactElement'는 특정 컴포넌트와 그 컴포넌트의 props 그리고 children을 포함한다
         `,
-        component: <ReactElement />,
+        component: <ReactElementPage />,
     },
     {
         id: 44,

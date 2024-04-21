@@ -20,7 +20,7 @@ const Container: React.FC<Props> = ({ children }) => {
     return <div>{children}</div>;
 };
 
-const ReactNode = () => {
+const ReactNodePage = () => {
     const content = `
         type Props = {children: ReactNode;}
         const Container: React.FC<Props> = ({ children }) => {
@@ -42,4 +42,4 @@ const ReactNode = () => {
         </S.Container>
     );
 };
-export default ReactNode;
+export default ReactNodePage;
