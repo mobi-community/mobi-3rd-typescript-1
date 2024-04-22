@@ -1,52 +1,33 @@
 # mobi-3rd-typescript-1
-### 3주차
-<a href="https://lyrical-brain-e0f.notion.site/mobi-typescript-week1-842b561374934a6d8af07b45fceaf43d">@see</a>
 
-### 기간
-```
-2024.04.15 ~ 2024.04.20 (일요일 리뷰 가능하도록 PR 남기기, 스프레티드시트에 링크 등록)
-2024.04.21 (WIL, 다른 페어 코드 리뷰, 1주차 회고 및 느낀점 발표)
+### 학습 목표
 
-* 반드시 리드미에 프로젝트 개요와 설명, 시연 영상 등을 함께 작성해주세요 :)
-```
+- 타입스크립트가 무엇인지 명확히 알고 있어야한다
+- 타입스크립트의 장점과 사용이유를 알고 있어야한다
+- 자바스크립트에 타입을 추론할 수 있도록 타입 부여를 할 수 있어야 한다
 
-### 페어-편성
-```
-1페어 Gang - Wendy
-2페어 Brilly - Riel
-```
+<hr/>
 
-### 과제
-```
-1. 타입스크립트란 무엇일까요?
-2. 실무에서 자주 사용하는 타입 바로 알기
-3. 타입스크립트 바로 잡기
-4. React의 Typescript
-5. 문제 풀어보기
-6. Check List
-```
+주소 : [내용 정리](https://ts.soljk.com/)
 
-### 진행방법
-```
-1. 페어는 각자 함께 할 수 있는 시간을 선정합니다.
-2. 시간 선정이 완료되면 mobi 단톡방에 월~일요일 단위로 올려주세요.
-ex)
-  월 
-  - Jeff (14:00 ~ 22:00)
-  - Lucas (08:00 ~ 20:00)
-  - core-time (20:00~22:00) -- 코어 타임은 매일 매일 가져야합니다. 겹치는 시간을 최대한 활용하고 블락킹 된 부분과 풀이한 부분을 공유할 것
+### Task1 타입 스트립트란? (300자 이상)
+[타입스크립트란?](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/pair2-Gang/week7/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%9E%80%3F.txt)
 
-  화 ...
-  ...
-  목 - 리프레쉬 데이 (같은 페어일 경우 요일 고정)
-  ...
-  일
-  - 20:00~22:00 WIL
-  - 22:00~23:00 1주차 회고 및 느낀점
-  - 23:00~01:00 각 페어 코드 리뷰 -- 반드시 PR로 문서화할 것
+### Task2 타입스크립트의 기본타입과 유틸리티 타입
+[기본 타입](https://github.com/mobi-community/mobi-3rd-typescript-1/tree/pair2-Gang/week7/src/defaultType)
+[유틸리티 타입](https://github.com/mobi-community/mobi-3rd-typescript-1/tree/pair2-Gang/week7/src/utilType)
 
+### Task3 타입스크립트의 장단점
+[타입스트립트의 장단점](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/pair2-Gang/week7/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98%20%EC%9E%A5%EB%8B%A8%EC%A0%90.txt)
 
-2. 과제는 스스로 풀어본 이후에 코어 타임에는 반드시 페어와 함께 고민하고 블락킹 된 부분의 해소와 풀이를 공유해야합니다.
-3. 매일 매일 풀이한 과제는 해당 레포지토리에 브랜치에 Pair-n으로 commit-push 합니다. (리프레쉬 제외 1일 1커밋 준수)
-4. 학습 시간에는 모비 항상 디스코드에 접속해서 학습을 진행해주셔야 합니다.
-```
+### Task4 React에서 편의성을 위해 만들어낸 타입
+[React Type](https://github.com/mobi-community/mobi-3rd-typescript-1/tree/pair2-Gang/week7/src/reactType)
+
+### Task5 문제 풀어보기
+- [문제 1](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/pair2-Gang/tsproject/src/Task5_Q1.ts)
+
+- 문제 2 : vite로 typescript를 생성하여 예제를 작성하였습니다
+
+- [문제 3](https://github.com/mobi-community/mobi-3rd-typescript-1/blob/pair2-Gang/tsproject/src/Task_Q3.ts)
+
+- [문제 4](https://github.com/mobi-community/mobi-3rd-typescript-1/tree/pair2-Gang/tsproject/src)
