@@ -1,0 +1,40 @@
+[React에서 편의를 위해 만든 Type]
+1. React.FC
+  : React 18 버전 이후에는 React.FC를 사용하여 컴포넌트를 정의하는 것이 권장된다.
+    이전에는 children 프로퍼티에 대한 타입 추론이 잘 되지 않았지만, React.FC를 사용하면 children이 자동으로 포함되어 타입이 정확하게 추론된다.
+    이전에는 defaultProps를 제대로 타입 체크하지 못했지만, React.FC를 사용하면 defaultProps도 제대로 타입 체크된다.
+    React.FC를 사용할 수 없는 환경이라면, 이전에 사용하던 방식대로 함수형 컴포넌트를 정의하면 된다.
+    반환 타입을 React.ReactNode이나 JSX.Element 등으로 명시하여 타입 추론을 돕는다.
+
+2. ReactNode
+  : React 컴포넌트가 반환할 수 있는 모든 유형의 노드를 나타내는 타입이다.
+    JSX 요소, 문자열, 숫자, 불리언, 배열, Fragment 등을 포함한다.
+    컴포넌트가 반환할 수 있는 모든 내용을 표현할 수 있다.
+
+3. ReactElement
+  : React 요소를 나타내는 타입 (JSX로 작성된 컴포넌트나 DOM 요소 등)
+     ReactElement는 React 트리의 노드를 나타내며, Virtual DOM에서 사용된다.
+  
+4. PropsWithChildren
+  : 컴포넌트에 자동으로 전달되는 children 프로퍼티를 포함하는 Props를 나타내는 타입이다.
+    자식 요소를 포함하는 컴포넌트의 Props를 명시적으로 타입화할 수 있다.
+
+5. PropsWithRef
+  : Ref를 포함하는 Props를 나타내는 타입이다.
+    Ref를 사용하여 DOM 요소나 컴포넌트에 접근할 수 있다.
+
+6. RefObject
+  : React에서 Ref를 나타내는 타입 중 하나이다.
+    RefObject를 사용하면 함수형 컴포넌트에서 Ref를 생성하고 사용할 수 있다.
+
+7. SetStateAction
+  : 상태 업데이트 함수에 전달되는 새로운 상태 값을 나타내는 타입이다.
+    주로 useState 또는 useReducer 훅에서 상태를 업데이트할 때 사용된다.
+
+8. Dispatch
+  : Reducer에서 액션을 dispatch하는 데 사용되는 타입이다.
+    주로 useReducer 훅에서 사용된다.
+
+9. MouseEvent, ChangeEvent, FormEvent, HTML<>Element
+  : 이벤트 처리 및 DOM 요소의 타입을 정의하는 데 사용된다.
+  
